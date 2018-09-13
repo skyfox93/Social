@@ -2,23 +2,29 @@ doctype html
 html(lang='en')
 	head
 		title Linked
+		style(type="text/css").
+			.topics{font-size:1.5em;background-color:Gainsboro;width:600px;padding:5px;}
+			.comment{margin-top:10px;}
+			.topicWrapper{margin-top:2em;}
 	body
 		h1 Discussion
 		form(action='/', method='post')
 			label Start a new discussion
-				input(type='text', name='topic')
+				p
+					textarea(name='heading' rows='3' cols='80')
 			button(type='submit') Submit
 		if topics
 			each topic in topics
-				h2.topics=topic.heading
-					if topic.comments
-						each comment in comments
-							h3=comment
-					h4
-						form(action='/comment', method='get')
-						label add comment
-							input(type='hidden', name='topicNum')=topics.indexOf(topic);
-							input(type='text', name='comment')
-						button(type='submit') Submit
+				.topicWrapper
+					.topics=topic.heading
+					if topic.comments.length
+					each comment in topic.comments
+						.comment=comment
+					.comment
+							form(action='/comment', method='post')
+								label add comment
+									input(type='text', name='comment')
+								input(type='hidden', name='topicNum' value=topics.indexOf(topic))
+								button(type='submit') Submit
 
 	
