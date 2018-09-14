@@ -2,29 +2,43 @@ doctype html
 html(lang='en')
 	head
 		title Linked
+		meta(name="viewport" content="width=device-width, initial scale=1")
 		style(type="text/css").
-			.topics{font-size:1.5em;background-color:Gainsboro;width:600px;padding:5px;}
+			.topics{font-size:1.5em;height:auto;background-color:Gainsboro;}
 			.comment{margin-top:10px;}
-			.topicWrapper{margin-top:2em;}
+			.topicWrapper{margin-top:2em;height:auto;width:device-width;padding:5px;overflow-wrap: break-word;}
+			.username{margin-right:30px;}
+			.date{display:inline-block;float:right;}
+			.topics .date{font-size:0.66em;}
+			.commentWrapper{width:inherit;}
+			
 	body
-		h1 Discussion
+		h1=user
 		form(action='/', method='post')
 			label Start a new discussion
 				p
-					textarea(name='heading' rows='3' cols='80')
+					textarea(name='heading' rows='3' cols='50')
 			button(type='submit') Submit
 		if topics
-			each topic in topics
+			- for (var i=topics.length-1;i>-1;i--)
 				.topicWrapper
-					.topics=topic.heading
-					if topic.comments.length
-					each comment in topic.comments
-						.comment=comment
+					.topics=topics[i].heading
+						-let datestring=topics[i].date
+						.date=datestring
+					
+					if topics[i].comments.length
+						each comment in topics[i].comments
+							.commentWrapper
+								span.username=comment.user+':'
+								span.comment=comment.comment
+								-let datestring=comment.date
+								.date=datestring
 					.comment
-							form(action='/comment', method='post')
-								label add comment
-									input(type='text', name='comment')
-								input(type='hidden', name='topicNum' value=topics.indexOf(topic))
-								button(type='submit') Submit
+								form(action='/comment', method='post')
+									label add comment
+										input(type='text', name='comment')
+									input(type='hidden', name='topicNum' value=topics.indexOf(topics[i]))
+									input(type='hidden', name='user' value=user)
+						
 
 	

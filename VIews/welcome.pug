@@ -1,0 +1,8 @@
+html(lang='en')
+	head
+		title Welcome
+	body
+	p Welcome! This device isn't registered. Please Enter your name.
+	form(action='/user', method='post')
+		input(type='text', name='user')
+		button(type='submit') Submit
