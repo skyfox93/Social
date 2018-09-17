@@ -23,16 +23,25 @@ html(lang='en')
 			- for (var i=topics.length-1;i>-1;i--)
 				.topicWrapper
 					.topics=topics[i].heading
-						-let datestring=topics[i].date
-						.date=datestring
+						-let now=new Date();let postDate=new Date(topics[i].date)
+						if (now-postDate)<86400000
+							.date=Math.floor((now-postDate)/3600000)+' hours ago'
+						else
+							.date=topics[i].date.slice(10)
 					
 					if topics[i].comments.length
 						each comment in topics[i].comments
 							.commentWrapper
 								span.username=comment.user+':'
 								span.comment=comment.comment
-								-let datestring=comment.date
-								.date=datestring
+								-let now=new Date();let postDate=new Date(comment.date)
+								if (now-postDate)<86400000
+									.date=Math.floor((now-postDate)/3600000)+' hours ago'
+								else
+									.date=comment.date.slice(10)
+									
+							
+								
 					.comment
 								form(action='/comment', method='post')
 									label add comment

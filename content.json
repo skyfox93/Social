@@ -1,78 +1,38 @@
 [
     {
-        "heading": "i don't want parsing errors",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "i didn't even quit that time",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "what's going on here",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "test",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "it seems to be losing the value, i guess if the request comes in",
+        "heading": "This is a new discussion",
+        "user": "Skylar",
         "comments": [
             {
-                "comment": "if the",
+                "comment": "I will!",
                 "user": "Skylar",
-                "date": "Fri Sep 14 2018"
-            },
-            {
-                "comment": "",
-                "user": "Skylar",
-                "date": "Fri Sep 14 2018"
-            },
-            {
-                "comment": "w",
-                "user": "Skylar",
-                "date": "Fri Sep 14 2018"
-            },
-            {
-                "comment": "w",
-                "user": "Skylar",
-                "date": "Fri Sep 14 2018"
+                "date": "Sat, 15 Sep 2018 02:44:16 GMT"
             }
         ],
-        "date": "13 hours ago"
+        "date": "Fri Sep 14 2018"
     },
     {
-        "heading": "w",
-        "comments": [],
-        "date": "13 hours ago"
+        "heading": "Who will pick up the CSA",
+        "user": "Skylar",
+        "comments": [
+            {
+                "comment": "I will!",
+                "user": "Skylar",
+                "date": "Sat, 15 Sep 2018 02:47:36 GMT"
+            }
+        ],
+        "date": "Fri Sep 14 2018"
     },
     {
-        "heading": "",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "",
-        "comments": [],
-        "date": "13 hours ago"
-    },
-    {
-        "heading": "",
-        "comments": [],
-        "date": "13 hours ago"
+        "heading": "Who will pickup the CSA?",
+        "user": "Skylar",
+        "comments": [
+            {
+                "comment": "I will!",
+                "user": "Skylar",
+                "date": "Mon, 17 Sep 2018 00:33:58 GMT"
+            }
+        ],
+        "date": "Sat, 15 Sep 2018 02:47:56 GMT"
     }
 ]
