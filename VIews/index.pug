@@ -27,7 +27,7 @@ html(lang='en')
 						if (now-postDate)<86400000
 							.date=Math.floor((now-postDate)/3600000)+' hours ago'
 						else
-							.date=topics[i].date.slice(10)
+							.date=topics[i].date.slice(0,12)
 					
 					if topics[i].comments.length
 						each comment in topics[i].comments
@@ -38,7 +38,7 @@ html(lang='en')
 								if (now-postDate)<86400000
 									.date=Math.floor((now-postDate)/3600000)+' hours ago'
 								else
-									.date=comment.date.slice(10)
+									.date=comment.date.slice(0,12)
 									
 							
 								
